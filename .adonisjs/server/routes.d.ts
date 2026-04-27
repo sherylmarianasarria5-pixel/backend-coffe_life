@@ -44,6 +44,41 @@ export type ScannedRoutes = {
     'cat_prioridades.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_prioridades.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_prioridades.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.index': { paramsTuple?: []; params?: {} }
+    'admin.create': { paramsTuple?: []; params?: {} }
+    'admin.store': { paramsTuple?: []; params?: {} }
+    'admin.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.index': { paramsTuple?: []; params?: {} }
+    'cafeteros.create': { paramsTuple?: []; params?: {} }
+    'cafeteros.store': { paramsTuple?: []; params?: {} }
+    'cafeteros.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.index': { paramsTuple?: []; params?: {} }
+    'expertos.create': { paramsTuple?: []; params?: {} }
+    'expertos.store': { paramsTuple?: []; params?: {} }
+    'expertos.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.index': { paramsTuple?: []; params?: {} }
+    'roles.create': { paramsTuple?: []; params?: {} }
+    'roles.store': { paramsTuple?: []; params?: {} }
+    'roles.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.index': { paramsTuple?: []; params?: {} }
+    'categorias.create': { paramsTuple?: []; params?: {} }
+    'categorias.store': { paramsTuple?: []; params?: {} }
+    'categorias.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   GET: {
     'cat_roles.index': { paramsTuple?: []; params?: {} }
@@ -62,6 +97,26 @@ export type ScannedRoutes = {
     'cat_tipos_recomendacion.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_prioridades.index': { paramsTuple?: []; params?: {} }
     'cat_prioridades.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.index': { paramsTuple?: []; params?: {} }
+    'admin.create': { paramsTuple?: []; params?: {} }
+    'admin.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.index': { paramsTuple?: []; params?: {} }
+    'cafeteros.create': { paramsTuple?: []; params?: {} }
+    'cafeteros.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.index': { paramsTuple?: []; params?: {} }
+    'expertos.create': { paramsTuple?: []; params?: {} }
+    'expertos.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.index': { paramsTuple?: []; params?: {} }
+    'roles.create': { paramsTuple?: []; params?: {} }
+    'roles.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.index': { paramsTuple?: []; params?: {} }
+    'categorias.create': { paramsTuple?: []; params?: {} }
+    'categorias.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   HEAD: {
     'cat_roles.index': { paramsTuple?: []; params?: {} }
@@ -80,6 +135,26 @@ export type ScannedRoutes = {
     'cat_tipos_recomendacion.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_prioridades.index': { paramsTuple?: []; params?: {} }
     'cat_prioridades.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.index': { paramsTuple?: []; params?: {} }
+    'admin.create': { paramsTuple?: []; params?: {} }
+    'admin.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.index': { paramsTuple?: []; params?: {} }
+    'cafeteros.create': { paramsTuple?: []; params?: {} }
+    'cafeteros.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.index': { paramsTuple?: []; params?: {} }
+    'expertos.create': { paramsTuple?: []; params?: {} }
+    'expertos.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.index': { paramsTuple?: []; params?: {} }
+    'roles.create': { paramsTuple?: []; params?: {} }
+    'roles.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.index': { paramsTuple?: []; params?: {} }
+    'categorias.create': { paramsTuple?: []; params?: {} }
+    'categorias.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   POST: {
     'cat_roles.store': { paramsTuple?: []; params?: {} }
@@ -90,6 +165,11 @@ export type ScannedRoutes = {
     'cat_estados_analisis.store': { paramsTuple?: []; params?: {} }
     'cat_tipos_recomendacion.store': { paramsTuple?: []; params?: {} }
     'cat_prioridades.store': { paramsTuple?: []; params?: {} }
+    'admin.store': { paramsTuple?: []; params?: {} }
+    'cafeteros.store': { paramsTuple?: []; params?: {} }
+    'expertos.store': { paramsTuple?: []; params?: {} }
+    'roles.store': { paramsTuple?: []; params?: {} }
+    'categorias.store': { paramsTuple?: []; params?: {} }
   }
   PUT: {
     'cat_roles.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
@@ -100,6 +180,11 @@ export type ScannedRoutes = {
     'cat_estados_analisis.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_tipos_recomendacion.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_prioridades.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
   DELETE: {
     'cat_roles.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
@@ -110,6 +195,18 @@ export type ScannedRoutes = {
     'cat_estados_analisis.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_tipos_recomendacion.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'cat_prioridades.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'admin.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+  }
+  PATCH: {
+    'admin.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'cafeteros.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'expertos.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'roles.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'categorias.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
 }
 declare module '@adonisjs/core/types/http' {

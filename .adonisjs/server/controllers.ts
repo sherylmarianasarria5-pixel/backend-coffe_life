@@ -5,6 +5,8 @@
 
 export const controllers = {
   AccessTokens: () => import('#controllers/access_tokens_controller'),
+  Admin: () => import('#controllers/admin_controller'),
+  Cafeteros: () => import('#controllers/cafeteros_controller'),
   CatEstadosAnalises: () => import('#controllers/cat_estados_analises_controller'),
   CatEstadosCultivos: () => import('#controllers/cat_estados_cultivos_controller'),
   CatNivelesRoyas: () => import('#controllers/cat_niveles_royas_controller'),
@@ -12,7 +14,10 @@ export const controllers = {
   CatRoles: () => import('#controllers/cat_roles_controller'),
   CatTiposRecomendacions: () => import('#controllers/cat_tipos_recomendacions_controller'),
   CatTiposTratamientos: () => import('#controllers/cat_tipos_tratamientos_controller'),
+  Categorias: () => import('#controllers/categorias_controller'),
+  Expertos: () => import('#controllers/expertos_controller'),
   NewAccount: () => import('#controllers/new_account_controller'),
   Profile: () => import('#controllers/profile_controller'),
+  Roles: () => import('#controllers/roles_controller'),
   Usuarios: () => import('#controllers/usuarios_controller'),
 }
