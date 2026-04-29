@@ -1,90 +1,84 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Usuario from '#models/usuario'
 
-export default class CafeteroController {
+export default class CafeterosController {
+  async index({ response }: HttpContext) {
+    const usuarios = await Usuario.query()
+      .whereHas('rol', (query) => {
+        query.whereRaw('LOWER(TRIM(nombre_rol)) = ?', ['cafetero'])
+      })
+      .preload('rol')
 
-async index({response}:HttpContext){
+    return response.ok(usuarios)
+  }
 
-const usuarios=await Usuario.query()
-.whereHas('rol',(query)=>{
-query.where('nombre','cafetero')
-})
-.preload('rol')
+  async store({ request, response }: HttpContext) {
+    const data = request.only([
+      'nombre',
+      'apellido',
+      'correo',
+      'telefono',
+      'passwordHash',
+      'observaciones',
+      'activo',
+    ])
 
-return response.ok(usuarios)
+    const { default: CatRol } = await import('#models/cat_rol')
 
-}
+    const rolCafetero = await CatRol.query()
+      .whereRaw('LOWER(TRIM(nombre_rol)) = ?', ['cafetero'])
+      .firstOrFail()
 
-async store({request,response}:HttpContext){
+    const usuario = await Usuario.create({
+      ...data,
+      idRol: rolCafetero.idRol,
+    })
 
-const data=request.only([
-'nombre',
-'apellido',
-'correo',
-'telefono',
-'passwordHash',
-'observaciones',
-'activo'
-])
+    return response.created({
+      message: 'Cafetero creado correctamente',
+      data: usuario,
+    })
+  }
+  async show({ params, response }: HttpContext) {
+    const usuario = await Usuario.query()
+      .where('id_usuario', params.id)
+      .whereHas('rol', (query) => {
+        query.whereRaw('LOWER(TRIM(nombre_rol)) = ?', ['cafetero'])
+      })
+      .preload('rol')
+      .firstOrFail()
 
-const usuario=await Usuario.create({
-...data,
-idRol:2
-})
+    return response.ok(usuario)
+  }
+  async update({ params, request, response }: HttpContext) {
+    const usuario = await Usuario.query().where('id_usuario', params.id).firstOrFail()
 
-return response.created({
-message:'Cafetero creado correctamente',
-data:usuario
-})
+    usuario.merge(
+      request.only([
+        'nombre',
+        'apellido',
+        'correo',
+        'telefono',
+        'passwordHash',
+        'observaciones',
+        'activo',
+      ])
+    )
 
-}
+    await usuario.save()
 
-async show({params,response}:HttpContext){
+    return response.ok({
+      message: 'Cafetero actualizado',
+      data: usuario,
+    })
+  }
+  async destroy({ params, response }: HttpContext) {
+    const usuario = await Usuario.query().where('id_usuario', params.id).firstOrFail()
 
-const usuario=await Usuario.query()
-.where('id',params.id)
-.whereHas('rol',(q)=>{
-q.where('nombre','cafetero')
-})
-.preload('rol')
-.firstOrFail()
+    await usuario.delete()
 
-return response.ok(usuario)
-
-}
-
-async update({params,request,response}:HttpContext){
-
-const usuario=await Usuario.findOrFail(params.id)
-
-usuario.merge(
-request.only([
-'nombre',
-'apellido',
-'correo',
-'telefono',
-'passwordHash',
-'observaciones',
-'activo'
-])
-)
-
-await usuario.save()
-
-return response.ok(usuario)
-
-}
-
-async destroy({params,response}:HttpContext){
-
-const usuario=await Usuario.findOrFail(params.id)
-
-await usuario.delete()
-
-return response.ok({
-message:'Cafetero eliminado'
-})
-
-}
-
+    return response.ok({
+      message: 'Cafetero eliminado',
+    })
+  }
 }

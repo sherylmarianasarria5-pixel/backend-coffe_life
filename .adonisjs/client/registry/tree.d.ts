@@ -67,15 +67,6 @@ export interface ApiDefinition {
     update: typeof routes['admin.update']
     destroy: typeof routes['admin.destroy']
   }
-  cafeteros: {
-    index: typeof routes['cafeteros.index']
-    create: typeof routes['cafeteros.create']
-    store: typeof routes['cafeteros.store']
-    show: typeof routes['cafeteros.show']
-    edit: typeof routes['cafeteros.edit']
-    update: typeof routes['cafeteros.update']
-    destroy: typeof routes['cafeteros.destroy']
-  }
   expertos: {
     index: typeof routes['expertos.index']
     create: typeof routes['expertos.create']
@@ -85,14 +76,14 @@ export interface ApiDefinition {
     update: typeof routes['expertos.update']
     destroy: typeof routes['expertos.destroy']
   }
-  roles: {
-    index: typeof routes['roles.index']
-    create: typeof routes['roles.create']
-    store: typeof routes['roles.store']
-    show: typeof routes['roles.show']
-    edit: typeof routes['roles.edit']
-    update: typeof routes['roles.update']
-    destroy: typeof routes['roles.destroy']
+  cafeteros: {
+    index: typeof routes['cafeteros.index']
+    create: typeof routes['cafeteros.create']
+    store: typeof routes['cafeteros.store']
+    show: typeof routes['cafeteros.show']
+    edit: typeof routes['cafeteros.edit']
+    update: typeof routes['cafeteros.update']
+    destroy: typeof routes['cafeteros.destroy']
   }
   categorias: {
     index: typeof routes['categorias.index']
@@ -102,5 +93,14 @@ export interface ApiDefinition {
     edit: typeof routes['categorias.edit']
     update: typeof routes['categorias.update']
     destroy: typeof routes['categorias.destroy']
+  }
+  roles: {
+    index: typeof routes['roles.index']
+    create: typeof routes['roles.create']
+    store: typeof routes['roles.store']
+    show: typeof routes['roles.show']
+    edit: typeof routes['roles.edit']
+    update: typeof routes['roles.update']
+    destroy: typeof routes['roles.destroy']
   }
 }

@@ -8,7 +8,16 @@ export default class UsuariosController {
   }
 
   async store({ request, response }: HttpContext) {
-    const data = request.only(['idRol', 'nombre', 'apellido', 'correo', 'telefono', 'passwordHash', 'observaciones', 'activo'])
+    const data = request.only([
+      'idRol',
+      'nombre',
+      'apellido',
+      'correo',
+      'telefono',
+      'passwordHash',
+      'observaciones',
+      'activo',
+    ])
     const usuario = await Usuario.create(data)
     return response.created({
       message: 'Usuario creado correctamente',
@@ -23,7 +32,16 @@ export default class UsuariosController {
 
   async update({ params, request, response }: HttpContext) {
     const usuario = await Usuario.findOrFail(params.id)
-    const data = request.only(['idRol', 'nombre', 'apellido', 'correo', 'telefono', 'passwordHash', 'observaciones', 'activo'])
+    const data = request.only([
+      'idRol',
+      'nombre',
+      'apellido',
+      'correo',
+      'telefono',
+      'passwordHash',
+      'observaciones',
+      'activo',
+    ])
     usuario.merge(data)
     await usuario.save()
     return response.ok({

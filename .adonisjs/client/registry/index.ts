@@ -288,48 +288,6 @@ const routes = {
     tokens: [{"old":"/admin/:id","type":0,"val":"admin","end":""},{"old":"/admin/:id","type":1,"val":"id","end":""}],
     types: placeholder as Registry['admin.destroy']['types'],
   },
-  'cafeteros.index': {
-    methods: ["GET","HEAD"],
-    pattern: '/cafeteros',
-    tokens: [{"old":"/cafeteros","type":0,"val":"cafeteros","end":""}],
-    types: placeholder as Registry['cafeteros.index']['types'],
-  },
-  'cafeteros.create': {
-    methods: ["GET","HEAD"],
-    pattern: '/cafeteros/create',
-    tokens: [{"old":"/cafeteros/create","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/create","type":0,"val":"create","end":""}],
-    types: placeholder as Registry['cafeteros.create']['types'],
-  },
-  'cafeteros.store': {
-    methods: ["POST"],
-    pattern: '/cafeteros',
-    tokens: [{"old":"/cafeteros","type":0,"val":"cafeteros","end":""}],
-    types: placeholder as Registry['cafeteros.store']['types'],
-  },
-  'cafeteros.show': {
-    methods: ["GET","HEAD"],
-    pattern: '/cafeteros/:id',
-    tokens: [{"old":"/cafeteros/:id","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id","type":1,"val":"id","end":""}],
-    types: placeholder as Registry['cafeteros.show']['types'],
-  },
-  'cafeteros.edit': {
-    methods: ["GET","HEAD"],
-    pattern: '/cafeteros/:id/edit',
-    tokens: [{"old":"/cafeteros/:id/edit","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id/edit","type":1,"val":"id","end":""},{"old":"/cafeteros/:id/edit","type":0,"val":"edit","end":""}],
-    types: placeholder as Registry['cafeteros.edit']['types'],
-  },
-  'cafeteros.update': {
-    methods: ["PUT","PATCH"],
-    pattern: '/cafeteros/:id',
-    tokens: [{"old":"/cafeteros/:id","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id","type":1,"val":"id","end":""}],
-    types: placeholder as Registry['cafeteros.update']['types'],
-  },
-  'cafeteros.destroy': {
-    methods: ["DELETE"],
-    pattern: '/cafeteros/:id',
-    tokens: [{"old":"/cafeteros/:id","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id","type":1,"val":"id","end":""}],
-    types: placeholder as Registry['cafeteros.destroy']['types'],
-  },
   'expertos.index': {
     methods: ["GET","HEAD"],
     pattern: '/expertos',
@@ -372,47 +330,47 @@ const routes = {
     tokens: [{"old":"/expertos/:id","type":0,"val":"expertos","end":""},{"old":"/expertos/:id","type":1,"val":"id","end":""}],
     types: placeholder as Registry['expertos.destroy']['types'],
   },
-  'roles.index': {
+  'cafeteros.index': {
     methods: ["GET","HEAD"],
-    pattern: '/roles',
-    tokens: [{"old":"/roles","type":0,"val":"roles","end":""}],
-    types: placeholder as Registry['roles.index']['types'],
+    pattern: '/cafeteros',
+    tokens: [{"old":"/cafeteros","type":0,"val":"cafeteros","end":""}],
+    types: placeholder as Registry['cafeteros.index']['types'],
   },
-  'roles.create': {
+  'cafeteros.create': {
     methods: ["GET","HEAD"],
-    pattern: '/roles/create',
-    tokens: [{"old":"/roles/create","type":0,"val":"roles","end":""},{"old":"/roles/create","type":0,"val":"create","end":""}],
-    types: placeholder as Registry['roles.create']['types'],
+    pattern: '/cafeteros/create',
+    tokens: [{"old":"/cafeteros/create","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/create","type":0,"val":"create","end":""}],
+    types: placeholder as Registry['cafeteros.create']['types'],
   },
-  'roles.store': {
+  'cafeteros.store': {
     methods: ["POST"],
-    pattern: '/roles',
-    tokens: [{"old":"/roles","type":0,"val":"roles","end":""}],
-    types: placeholder as Registry['roles.store']['types'],
+    pattern: '/cafeteros',
+    tokens: [{"old":"/cafeteros","type":0,"val":"cafeteros","end":""}],
+    types: placeholder as Registry['cafeteros.store']['types'],
   },
-  'roles.show': {
+  'cafeteros.show': {
     methods: ["GET","HEAD"],
-    pattern: '/roles/:id',
-    tokens: [{"old":"/roles/:id","type":0,"val":"roles","end":""},{"old":"/roles/:id","type":1,"val":"id","end":""}],
-    types: placeholder as Registry['roles.show']['types'],
+    pattern: '/cafeteros/:id',
+    tokens: [{"old":"/cafeteros/:id","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['cafeteros.show']['types'],
   },
-  'roles.edit': {
+  'cafeteros.edit': {
     methods: ["GET","HEAD"],
-    pattern: '/roles/:id/edit',
-    tokens: [{"old":"/roles/:id/edit","type":0,"val":"roles","end":""},{"old":"/roles/:id/edit","type":1,"val":"id","end":""},{"old":"/roles/:id/edit","type":0,"val":"edit","end":""}],
-    types: placeholder as Registry['roles.edit']['types'],
+    pattern: '/cafeteros/:id/edit',
+    tokens: [{"old":"/cafeteros/:id/edit","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id/edit","type":1,"val":"id","end":""},{"old":"/cafeteros/:id/edit","type":0,"val":"edit","end":""}],
+    types: placeholder as Registry['cafeteros.edit']['types'],
   },
-  'roles.update': {
+  'cafeteros.update': {
     methods: ["PUT","PATCH"],
-    pattern: '/roles/:id',
-    tokens: [{"old":"/roles/:id","type":0,"val":"roles","end":""},{"old":"/roles/:id","type":1,"val":"id","end":""}],
-    types: placeholder as Registry['roles.update']['types'],
+    pattern: '/cafeteros/:id',
+    tokens: [{"old":"/cafeteros/:id","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['cafeteros.update']['types'],
   },
-  'roles.destroy': {
+  'cafeteros.destroy': {
     methods: ["DELETE"],
-    pattern: '/roles/:id',
-    tokens: [{"old":"/roles/:id","type":0,"val":"roles","end":""},{"old":"/roles/:id","type":1,"val":"id","end":""}],
-    types: placeholder as Registry['roles.destroy']['types'],
+    pattern: '/cafeteros/:id',
+    tokens: [{"old":"/cafeteros/:id","type":0,"val":"cafeteros","end":""},{"old":"/cafeteros/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['cafeteros.destroy']['types'],
   },
   'categorias.index': {
     methods: ["GET","HEAD"],
@@ -455,6 +413,48 @@ const routes = {
     pattern: '/categorias/:id',
     tokens: [{"old":"/categorias/:id","type":0,"val":"categorias","end":""},{"old":"/categorias/:id","type":1,"val":"id","end":""}],
     types: placeholder as Registry['categorias.destroy']['types'],
+  },
+  'roles.index': {
+    methods: ["GET","HEAD"],
+    pattern: '/roles',
+    tokens: [{"old":"/roles","type":0,"val":"roles","end":""}],
+    types: placeholder as Registry['roles.index']['types'],
+  },
+  'roles.create': {
+    methods: ["GET","HEAD"],
+    pattern: '/roles/create',
+    tokens: [{"old":"/roles/create","type":0,"val":"roles","end":""},{"old":"/roles/create","type":0,"val":"create","end":""}],
+    types: placeholder as Registry['roles.create']['types'],
+  },
+  'roles.store': {
+    methods: ["POST"],
+    pattern: '/roles',
+    tokens: [{"old":"/roles","type":0,"val":"roles","end":""}],
+    types: placeholder as Registry['roles.store']['types'],
+  },
+  'roles.show': {
+    methods: ["GET","HEAD"],
+    pattern: '/roles/:id',
+    tokens: [{"old":"/roles/:id","type":0,"val":"roles","end":""},{"old":"/roles/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['roles.show']['types'],
+  },
+  'roles.edit': {
+    methods: ["GET","HEAD"],
+    pattern: '/roles/:id/edit',
+    tokens: [{"old":"/roles/:id/edit","type":0,"val":"roles","end":""},{"old":"/roles/:id/edit","type":1,"val":"id","end":""},{"old":"/roles/:id/edit","type":0,"val":"edit","end":""}],
+    types: placeholder as Registry['roles.edit']['types'],
+  },
+  'roles.update': {
+    methods: ["PUT","PATCH"],
+    pattern: '/roles/:id',
+    tokens: [{"old":"/roles/:id","type":0,"val":"roles","end":""},{"old":"/roles/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['roles.update']['types'],
+  },
+  'roles.destroy': {
+    methods: ["DELETE"],
+    pattern: '/roles/:id',
+    tokens: [{"old":"/roles/:id","type":0,"val":"roles","end":""},{"old":"/roles/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['roles.destroy']['types'],
   },
 } as const satisfies Record<string, AdonisEndpoint>
 

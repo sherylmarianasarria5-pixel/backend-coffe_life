@@ -1,81 +1,43 @@
 import type { HttpContext } from '@adonisjs/core/http'
-import Usuario from '#models/usuario'
+import Categoria from '#models/categoria'
 
 export default class CategoriasController {
+  async index({ response }: HttpContext) {
+    return response.ok(await Categoria.all())
+  }
 
-async index({response}:HttpContext){
+  async store({ request, response }: HttpContext) {
+    const categoria = await Categoria.create(request.only(['nombre_categoria', 'descripcion']))
 
-const usuarios=await Usuario.query()
-.preload('categoria')
+    return response.created({
+      message: 'Categoria creada',
+      data: categoria,
+    })
+  }
 
-return response.ok(usuarios)
+  async show({ params, response }: HttpContext) {
+    return response.ok(await Categoria.findOrFail(params.id))
+  }
 
-}
+  async update({ params, request, response }: HttpContext) {
+    const categoria = await Categoria.findOrFail(params.id)
 
-async store({request,response}:HttpContext){
+    categoria.merge(request.only(['nombre_categoria', 'descripcion']))
 
-const data=request.only([
-'nombre',
-'apellido',
-'correo',
-'telefono',
-'passwordHash',
-'observaciones',
-'activo'
-])
+    await categoria.save()
 
-const usuario=await Usuario.create({
-...data,
-idCategoria:1
-})
+    return response.ok({
+      message: 'Categoria actualizada',
+      data: categoria,
+    })
+  }
 
-return response.created({
-message:'Categoría asignada correctamente',
-data:usuario
-})
+  async destroy({ params, response }: HttpContext) {
+    const categoria = await Categoria.findOrFail(params.id)
+    await categoria.delete()
 
-}
-
-async show({params,response}:HttpContext){
-
-const usuario=await Usuario.findOrFail(params.id)
-
-return response.ok(usuario)
-
-}
-
-async update({params,request,response}:HttpContext){
-
-const usuario=await Usuario.findOrFail(params.id)
-
-usuario.merge(
-request.only([
-'nombre',
-'apellido',
-'correo',
-'telefono',
-'passwordHash',
-'observaciones',
-'activo'
-])
-)
-
-await usuario.save()
-
-return response.ok(usuario)
-
-}
-
-async destroy({params,response}:HttpContext){
-
-const usuario=await Usuario.findOrFail(params.id)
-
-await usuario.delete()
-
-return response.ok({
-message:'Registro eliminado'
-})
-
-}
-
+    return response.ok({
+      message: 'Categoria eliminada',
+    })
+  }
 }
