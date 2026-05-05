@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@adonisjs/core": "^6.21.0",
+    "@adonisjs/lucid": "^21.8.2",
+    "@adonisjs/tsconfig": "^2.0.0",
+    "luxon": "^3.7.2",
+    "mysql2": "^3.22.3"
+  }
+}
