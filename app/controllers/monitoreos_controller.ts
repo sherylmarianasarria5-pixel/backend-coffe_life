@@ -5,9 +5,6 @@ export default class MonitoreosController {
   async index({ response }: HttpContext) {
     const monitoreos = await Monitoreo.query()
       .preload('cultivo')
-      .preload('imagenes')
-      .preload('recomendaciones')
-      .preload('analisis')
 
     return response.ok({
       message: 'Lista de monitoreos',
@@ -36,9 +33,6 @@ export default class MonitoreosController {
     const monitoreo = await Monitoreo.query()
       .where('id_monitoreo', params.id)
       .preload('cultivo')
-      .preload('imagenes')
-      .preload('recomendaciones')
-      .preload('analisis')
       .firstOrFail()
 
     return response.ok({
@@ -69,7 +63,6 @@ export default class MonitoreosController {
 
   async destroy({ params, response }: HttpContext) {
     const monitoreo = await Monitoreo.findOrFail(params.id)
-
     await monitoreo.delete()
 
     return response.ok({

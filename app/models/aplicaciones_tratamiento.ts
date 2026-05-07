@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, belongsTo } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
-import Tratamiento from '#models/tratamiento'
+import Usuario from '#models/usuario'
 
 export default class AplicacionesTratamiento extends BaseModel {
   public static table = 'aplicaciones_tratamientos'
@@ -10,8 +10,8 @@ export default class AplicacionesTratamiento extends BaseModel {
   @column({ isPrimary: true, columnName: 'id_aplicacion' })
   declare idAplicacion: number
 
-  @column({ columnName: 'id_tratamiento' })
-  declare idTratamiento: number | null
+  @column({ columnName: 'id_rec_tratamiento' })
+  declare idRecTratamiento: number | null
 
   @column()
   declare dosis: string
@@ -22,14 +22,17 @@ export default class AplicacionesTratamiento extends BaseModel {
   @column()
   declare observaciones: string | null
 
+  @column({ columnName: 'id_usuario' })
+  declare idUsuario: number | null
+
   @column.dateTime({ autoCreate: true, columnName: 'fecha_registro' })
   declare fechaRegistro: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, columnName: 'fecha_actualizacion' })
   declare fechaActualizacion: DateTime
 
-  @belongsTo(() => Tratamiento, {
-    foreignKey: 'idTratamiento',
+  @belongsTo(() => Usuario, {
+    foreignKey: 'idUsuario',
   })
-  declare tratamiento: BelongsTo<typeof Tratamiento>
+  declare usuario: BelongsTo<typeof Usuario>
 }

@@ -5,6 +5,7 @@
 
 export const controllers = {
   AccessTokens: () => import('#controllers/access_tokens_controller'),
+  AplicacionesTratamientos: () => import('#controllers/aplicaciones_tratamientos_controller'),
   CatEstadosAnalises: () => import('#controllers/cat_estados_analises_controller'),
   CatEstadosCultivos: () => import('#controllers/cat_estados_cultivos_controller'),
   CatNivelesRoyas: () => import('#controllers/cat_niveles_royas_controller'),
@@ -18,5 +19,7 @@ export const controllers = {
   NewAccount: () => import('#controllers/new_account_controller'),
   Profile: () => import('#controllers/profile_controller'),
   RecomendacionTratamientos: () => import('#controllers/recomendacion_tratamientos_controller'),
+  Recomendaciones: () => import('#controllers/recomendaciones_controller'),
+  Tratamientos: () => import('#controllers/tratamientos_controller'),
   Usuarios: () => import('#controllers/usuarios_controller'),
 }

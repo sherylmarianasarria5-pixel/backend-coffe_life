@@ -12,6 +12,9 @@ import CatTiposRecomendacionsController from '#controllers/cat_tipos_recomendaci
 import CatEstadosAnalisisController from '#controllers/cat_estados_analises_controller'
 import CatEstadosCultivosController from '#controllers/cat_estados_cultivos_controller'
 import RecomendacionTratamientosController from '#controllers/recomendacion_tratamientos_controller'
+import RecomendacionesController from '#controllers/recomendaciones_controller'
+import TratamientosController from '#controllers/tratamientos_controller'
+import AplicacionesTratamientosController from '#controllers/aplicaciones_tratamientos_controller'
 
 const usuariosController = new UsuariosController()
 const monitoreosController = new MonitoreosController()
@@ -25,6 +28,9 @@ const catTiposRecomendacionsController = new CatTiposRecomendacionsController()
 const catEstadosAnalisisController = new CatEstadosAnalisisController()
 const catEstadosCultivosController = new CatEstadosCultivosController()
 const recomendacionTratamientosController = new RecomendacionTratamientosController()
+const recomendacionesController = new RecomendacionesController()
+const tratamientosController = new TratamientosController()
+const aplicacionesTratamientosController = new AplicacionesTratamientosController()
 
 router.get('/', async () => {
   return { mensaje: 'API Coffee Life funcionando correctamente' }
@@ -153,6 +159,17 @@ router.delete('/monitoreos/:id', monitoreosController.destroy)
 
 /*
 |--------------------------------------------------------------------------
+| Recomendaciones
+|--------------------------------------------------------------------------
+*/
+router.get('/recomendaciones', recomendacionesController.index)
+router.post('/recomendaciones', recomendacionesController.store)
+router.get('/recomendaciones/:id', recomendacionesController.show)
+router.put('/recomendaciones/:id', recomendacionesController.update)
+router.delete('/recomendaciones/:id', recomendacionesController.destroy)
+
+/*
+|--------------------------------------------------------------------------
 | Recomendacion Tratamientos
 |--------------------------------------------------------------------------
 */
@@ -161,3 +178,25 @@ router.post('/recomendacion_tratamientos', recomendacionTratamientosController.s
 router.get('/recomendacion_tratamientos/:id', recomendacionTratamientosController.show)
 router.put('/recomendacion_tratamientos/:id', recomendacionTratamientosController.update)
 router.delete('/recomendacion_tratamientos/:id', recomendacionTratamientosController.destroy)
+
+/*
+|--------------------------------------------------------------------------
+| Tratamientos
+|--------------------------------------------------------------------------
+*/
+router.get('/tratamientos', tratamientosController.index)
+router.post('/tratamientos', tratamientosController.store)
+router.get('/tratamientos/:id', tratamientosController.show)
+router.put('/tratamientos/:id', tratamientosController.update)
+router.delete('/tratamientos/:id', tratamientosController.destroy)
+
+/*
+|--------------------------------------------------------------------------
+| Aplicaciones Tratamientos
+|--------------------------------------------------------------------------
+*/
+router.get('/aplicaciones_tratamientos', aplicacionesTratamientosController.index)
+router.post('/aplicaciones_tratamientos', aplicacionesTratamientosController.store)
+router.get('/aplicaciones_tratamientos/:id', aplicacionesTratamientosController.show)
+router.put('/aplicaciones_tratamientos/:id', aplicacionesTratamientosController.update)
+router.delete('/aplicaciones_tratamientos/:id', aplicacionesTratamientosController.destroy)
