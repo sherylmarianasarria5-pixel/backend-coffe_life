@@ -5,15 +5,11 @@
 
 export const controllers = {
   AccessTokens: () => import('#controllers/access_tokens_controller'),
-<<<<<<< HEAD
   Admin: () => import('#controllers/admin_controller'),
   AnalisisIa: () => import('#controllers/analisis_ia_controller'),
   AplicacionesTratamientos: () => import('#controllers/aplicaciones_tratamientos_controller'),
   Auth: () => import('#controllers/auth_controller'),
   Cafeteros: () => import('#controllers/cafeteros_controller'),
-=======
-  AplicacionesTratamientos: () => import('#controllers/aplicaciones_tratamientos_controller'),
->>>>>>> valentina
   CatEstadosAnalises: () => import('#controllers/cat_estados_analises_controller'),
   CatEstadosCultivos: () => import('#controllers/cat_estados_cultivos_controller'),
   CatNivelesRoyas: () => import('#controllers/cat_niveles_royas_controller'),
@@ -31,10 +27,7 @@ export const controllers = {
   Profile: () => import('#controllers/profile_controller'),
   RecomendacionTratamientos: () => import('#controllers/recomendacion_tratamientos_controller'),
   Recomendaciones: () => import('#controllers/recomendaciones_controller'),
-<<<<<<< HEAD
   Roles: () => import('#controllers/roles_controller'),
-=======
->>>>>>> valentina
   Tratamientos: () => import('#controllers/tratamientos_controller'),
   Usuarios: () => import('#controllers/usuarios_controller'),
 }

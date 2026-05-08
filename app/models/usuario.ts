@@ -45,6 +45,12 @@ export default class Usuario extends BaseModel {
   @column()
   declare activo: boolean
 
+  @column({ columnName: 'reset_token' })
+  declare resetToken: string | null
+
+  @column.dateTime({ columnName: 'reset_token_expiry' })
+  declare resetTokenExpiry: DateTime | null
+
   @beforeSave()
   static async hashPassword(usuario: Usuario) {
     if (usuario.$dirty.passwordHash) {

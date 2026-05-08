@@ -1,6 +1,5 @@
 import router from '@adonisjs/core/services/router'
 
-<<<<<<< HEAD
 const AuthController                      = () => import('#controllers/auth_controller')
 const UsuariosController                  = () => import('#controllers/usuarios_controller')
 const AdminController                     = () => import('#controllers/admin_controller')
@@ -23,39 +22,7 @@ const AplicacionesTratamientosController  = () => import('#controllers/aplicacio
 const ImagenesController                  = () => import('#controllers/imagenes_controller')
 const AnalisisIaController                = () => import('#controllers/analisis_ia_controller')
 const RecomendacionesController           = () => import('#controllers/recomendaciones_controller')
-=======
-import UsuariosController from '#controllers/usuarios_controller'
-import MonitoreosController from '#controllers/monitoreos_controller'
-import CatRolesController from '#controllers/cat_roles_controller'
-import CultivosController from '#controllers/cultivos_controller'
-import FincasController from '#controllers/fincas_controller'
-import CatTiposTratamientosController from '#controllers/cat_tipos_tratamientos_controller'
-import CatNivelesRoyasController from '#controllers/cat_niveles_royas_controller'
-import CatPrioridadesController from '#controllers/cat_prioridades_controller'
-import CatTiposRecomendacionsController from '#controllers/cat_tipos_recomendacions_controller'
-import CatEstadosAnalisisController from '#controllers/cat_estados_analises_controller'
-import CatEstadosCultivosController from '#controllers/cat_estados_cultivos_controller'
-import RecomendacionTratamientosController from '#controllers/recomendacion_tratamientos_controller'
-import RecomendacionesController from '#controllers/recomendaciones_controller'
-import TratamientosController from '#controllers/tratamientos_controller'
-import AplicacionesTratamientosController from '#controllers/aplicaciones_tratamientos_controller'
-
-const usuariosController = new UsuariosController()
-const monitoreosController = new MonitoreosController()
-const catRolesController = new CatRolesController()
-const cultivosController = new CultivosController()
-const fincasController = new FincasController()
-const catTiposTratamientosController = new CatTiposTratamientosController()
-const catNivelesRoyasController = new CatNivelesRoyasController()
-const catPrioridadesController = new CatPrioridadesController()
-const catTiposRecomendacionsController = new CatTiposRecomendacionsController()
-const catEstadosAnalisisController = new CatEstadosAnalisisController()
-const catEstadosCultivosController = new CatEstadosCultivosController()
-const recomendacionTratamientosController = new RecomendacionTratamientosController()
-const recomendacionesController = new RecomendacionesController()
-const tratamientosController = new TratamientosController()
-const aplicacionesTratamientosController = new AplicacionesTratamientosController()
->>>>>>> valentina
+const PasswordResetController             = () => import('#controllers/auth/password_resets_controller')
 
 router.get('/', async () => {
   return { mensaje: 'API Coffee Life funcionando correctamente' }
@@ -66,6 +33,8 @@ router.post('/login',                  [AuthController, 'login']).as('auth.login
 router.post('/register',               [AuthController, 'register']).as('auth.register')
 router.post('/recuperar-password',     [AuthController, 'recuperarPassword']).as('auth.recuperarPassword')
 router.post('/restablecer-password',   [AuthController, 'restablecerPassword']).as('auth.restablecerPassword')
+router.post('/forgot-password',        [PasswordResetController, 'forgotPassword'])
+router.post('/reset-password',         [PasswordResetController, 'resetPassword'])
 
 // USUARIOS
 router.get   ('/usuarios',     [UsuariosController, 'index']).as('usuarios.index')
@@ -95,7 +64,7 @@ router.get   ('/expertos/:id', [ExpertosController, 'show']).as('expertos.show')
 router.put   ('/expertos/:id', [ExpertosController, 'update']).as('expertos.update')
 router.delete('/expertos/:id', [ExpertosController, 'destroy']).as('expertos.destroy')
 
-// ROLES — funciona con /roles Y /cat_roles
+// ROLES
 router.get   ('/roles',         [CatRolesController, 'index']).as('roles.index')
 router.post  ('/roles',         [CatRolesController, 'store']).as('roles.store')
 router.get   ('/roles/:id',     [CatRolesController, 'show']).as('roles.show')
@@ -136,7 +105,6 @@ router.get   ('/cat_tipos_recomendacion/:id', [CatTiposRecomendacionsController,
 router.put   ('/cat_tipos_recomendacion/:id', [CatTiposRecomendacionsController, 'update']).as('cat_tipos_recomendacion.update')
 router.delete('/cat_tipos_recomendacion/:id', [CatTiposRecomendacionsController, 'destroy']).as('cat_tipos_recomendacion.destroy')
 
-<<<<<<< HEAD
 // ESTADOS ANALISIS
 router.get   ('/cat_estados_analisis',     [CatEstadosAnalisisController, 'index']).as('cat_estados_analisis.index')
 router.post  ('/cat_estados_analisis',     [CatEstadosAnalisisController, 'store']).as('cat_estados_analisis.store')
@@ -220,48 +188,3 @@ router.post  ('/recomendaciones',     [RecomendacionesController, 'store']).as('
 router.get   ('/recomendaciones/:id', [RecomendacionesController, 'show']).as('recomendaciones.show')
 router.put   ('/recomendaciones/:id', [RecomendacionesController, 'update']).as('recomendaciones.update')
 router.delete('/recomendaciones/:id', [RecomendacionesController, 'destroy']).as('recomendaciones.destroy')
-=======
-/*
-|--------------------------------------------------------------------------
-| Recomendaciones
-|--------------------------------------------------------------------------
-*/
-router.get('/recomendaciones', recomendacionesController.index)
-router.post('/recomendaciones', recomendacionesController.store)
-router.get('/recomendaciones/:id', recomendacionesController.show)
-router.put('/recomendaciones/:id', recomendacionesController.update)
-router.delete('/recomendaciones/:id', recomendacionesController.destroy)
-
-/*
-|--------------------------------------------------------------------------
-| Recomendacion Tratamientos
-|--------------------------------------------------------------------------
-*/
-router.get('/recomendacion_tratamientos', recomendacionTratamientosController.index)
-router.post('/recomendacion_tratamientos', recomendacionTratamientosController.store)
-router.get('/recomendacion_tratamientos/:id', recomendacionTratamientosController.show)
-router.put('/recomendacion_tratamientos/:id', recomendacionTratamientosController.update)
-router.delete('/recomendacion_tratamientos/:id', recomendacionTratamientosController.destroy)
-
-/*
-|--------------------------------------------------------------------------
-| Tratamientos
-|--------------------------------------------------------------------------
-*/
-router.get('/tratamientos', tratamientosController.index)
-router.post('/tratamientos', tratamientosController.store)
-router.get('/tratamientos/:id', tratamientosController.show)
-router.put('/tratamientos/:id', tratamientosController.update)
-router.delete('/tratamientos/:id', tratamientosController.destroy)
-
-/*
-|--------------------------------------------------------------------------
-| Aplicaciones Tratamientos
-|--------------------------------------------------------------------------
-*/
-router.get('/aplicaciones_tratamientos', aplicacionesTratamientosController.index)
-router.post('/aplicaciones_tratamientos', aplicacionesTratamientosController.store)
-router.get('/aplicaciones_tratamientos/:id', aplicacionesTratamientosController.show)
-router.put('/aplicaciones_tratamientos/:id', aplicacionesTratamientosController.update)
-router.delete('/aplicaciones_tratamientos/:id', aplicacionesTratamientosController.destroy)
->>>>>>> valentina

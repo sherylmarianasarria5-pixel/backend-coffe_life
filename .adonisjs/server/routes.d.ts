@@ -8,6 +8,8 @@ export type ScannedRoutes = {
     'auth.register': { paramsTuple?: []; params?: {} }
     'auth.recuperarPassword': { paramsTuple?: []; params?: {} }
     'auth.restablecerPassword': { paramsTuple?: []; params?: {} }
+    'password_reset.forgot_password': { paramsTuple?: []; params?: {} }
+    'password_reset.reset_password': { paramsTuple?: []; params?: {} }
     'usuarios.index': { paramsTuple?: []; params?: {} }
     'usuarios.store': { paramsTuple?: []; params?: {} }
     'usuarios.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
@@ -216,6 +218,8 @@ export type ScannedRoutes = {
     'auth.register': { paramsTuple?: []; params?: {} }
     'auth.recuperarPassword': { paramsTuple?: []; params?: {} }
     'auth.restablecerPassword': { paramsTuple?: []; params?: {} }
+    'password_reset.forgot_password': { paramsTuple?: []; params?: {} }
+    'password_reset.reset_password': { paramsTuple?: []; params?: {} }
     'usuarios.store': { paramsTuple?: []; params?: {} }
     'admins.store': { paramsTuple?: []; params?: {} }
     'cafeteros.store': { paramsTuple?: []; params?: {} }
