@@ -30,6 +30,18 @@ const routes = {
     tokens: [{"old":"/restablecer-password","type":0,"val":"restablecer-password","end":""}],
     types: placeholder as Registry['auth.restablecerPassword']['types'],
   },
+  'password_reset.forgot_password': {
+    methods: ["POST"],
+    pattern: '/forgot-password',
+    tokens: [{"old":"/forgot-password","type":0,"val":"forgot-password","end":""}],
+    types: placeholder as Registry['password_reset.forgot_password']['types'],
+  },
+  'password_reset.reset_password': {
+    methods: ["POST"],
+    pattern: '/reset-password',
+    tokens: [{"old":"/reset-password","type":0,"val":"reset-password","end":""}],
+    types: placeholder as Registry['password_reset.reset_password']['types'],
+  },
   'usuarios.index': {
     methods: ["GET","HEAD"],
     pattern: '/usuarios',

@@ -8,6 +8,10 @@ export interface ApiDefinition {
     recuperarPassword: typeof routes['auth.recuperarPassword']
     restablecerPassword: typeof routes['auth.restablecerPassword']
   }
+  passwordReset: {
+    forgotPassword: typeof routes['password_reset.forgot_password']
+    resetPassword: typeof routes['password_reset.reset_password']
+  }
   usuarios: {
     index: typeof routes['usuarios.index']
     store: typeof routes['usuarios.store']

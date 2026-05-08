@@ -9,6 +9,9 @@ export const controllers = {
   AnalisisIa: () => import('#controllers/analisis_ia_controller'),
   AplicacionesTratamientos: () => import('#controllers/aplicaciones_tratamientos_controller'),
   Auth: () => import('#controllers/auth_controller'),
+  auth: {
+    PasswordResets: () => import('#controllers/auth/password_resets_controller'),
+  },
   Cafeteros: () => import('#controllers/cafeteros_controller'),
   CatEstadosAnalises: () => import('#controllers/cat_estados_analises_controller'),
   CatEstadosCultivos: () => import('#controllers/cat_estados_cultivos_controller'),

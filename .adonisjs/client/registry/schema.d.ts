@@ -55,6 +55,30 @@ export interface Registry {
       errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/auth_controller').default['restablecerPassword']>>>
     }
   }
+  'password_reset.forgot_password': {
+    methods: ["POST"]
+    pattern: '/forgot-password'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/auth/password_resets_controller').default['forgotPassword']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/auth/password_resets_controller').default['forgotPassword']>>>
+    }
+  }
+  'password_reset.reset_password': {
+    methods: ["POST"]
+    pattern: '/reset-password'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/auth/password_resets_controller').default['resetPassword']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/auth/password_resets_controller').default['resetPassword']>>>
+    }
+  }
   'usuarios.index': {
     methods: ["GET","HEAD"]
     pattern: '/usuarios'
