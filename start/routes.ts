@@ -9,7 +9,6 @@ const MonitoreosController                = () => import('#controllers/monitoreo
 const CatRolesController                  = () => import('#controllers/cat_roles_controller')
 const CultivosController                  = () => import('#controllers/cultivos_controller')
 const FincasController                    = () => import('#controllers/fincas_controller')
-const CategoriasController                = () => import('#controllers/categorias_controller')
 const CatTiposTratamientosController      = () => import('#controllers/cat_tipos_tratamientos_controller')
 const CatNivelesRoyasController           = () => import('#controllers/cat_niveles_royas_controller')
 const CatPrioridadesController            = () => import('#controllers/cat_prioridades_controller')
@@ -118,13 +117,6 @@ router.post  ('/cat_estados_cultivo',     [CatEstadosCultivosController, 'store'
 router.get   ('/cat_estados_cultivo/:id', [CatEstadosCultivosController, 'show']).as('cat_estados_cultivo.show')
 router.put   ('/cat_estados_cultivo/:id', [CatEstadosCultivosController, 'update']).as('cat_estados_cultivo.update')
 router.delete('/cat_estados_cultivo/:id', [CatEstadosCultivosController, 'destroy']).as('cat_estados_cultivo.destroy')
-
-// CATEGORIAS
-router.get   ('/categorias',     [CategoriasController, 'index']).as('categorias.index')
-router.post  ('/categorias',     [CategoriasController, 'store']).as('categorias.store')
-router.get   ('/categorias/:id', [CategoriasController, 'show']).as('categorias.show')
-router.put   ('/categorias/:id', [CategoriasController, 'update']).as('categorias.update')
-router.delete('/categorias/:id', [CategoriasController, 'destroy']).as('categorias.destroy')
 
 // FINCAS
 router.get   ('/fincas',     [FincasController, 'index']).as('fincas.index')
