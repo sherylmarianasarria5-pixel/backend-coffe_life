@@ -11,7 +11,7 @@ export default class RecomendacionTratamientosController {
 
       const items = await RecomendacionTratamiento.query()
         .preload('recomendacion')
-        .preload('tratamiento')
+        .preload('aplicacion')
 
       return response.ok(items)
 
@@ -32,7 +32,7 @@ export default class RecomendacionTratamientosController {
 
       const data = request.only([
         'id_recomendacion',
-        'id_tratamiento',
+        'id_aplicacion',
         'dosis_ajustada',
         'notas',
       ])
@@ -41,13 +41,13 @@ export default class RecomendacionTratamientosController {
         return response.badRequest({ message: 'El id_recomendacion es obligatorio' })
       }
 
-      if (!data.id_tratamiento) {
-        return response.badRequest({ message: 'El id_tratamiento es obligatorio' })
+      if (!data.id_aplicacion) {
+        return response.badRequest({ message: 'El id_aplicacion es obligatorio' })
       }
 
       const item = await RecomendacionTratamiento.create({
         idRecomendacion: data.id_recomendacion,
-        idTratamiento: data.id_tratamiento,
+        idAplicacion: data.id_aplicacion,
         dosisAjustada: data.dosis_ajustada,
         notas: data.notas,
       })
@@ -75,7 +75,7 @@ export default class RecomendacionTratamientosController {
       const item = await RecomendacionTratamiento.query()
         .where('id_rec_tratamiento', params.id)
         .preload('recomendacion')
-        .preload('tratamiento')
+        .preload('aplicacion')
         .firstOrFail()
 
       return response.ok(item)
